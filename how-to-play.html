@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bot & Breathe - How to Play</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+    <style>
+        .guide-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .step-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            height: 100%;
+            border: none;
+            position: relative;
+        }
+        
+        .step-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .step-number {
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .guide-section {
+            padding: 80px 0;
+        }
+        
+        .tip-box {
+            background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+            border-radius: 15px;
+            padding: 2rem;
+            color: white;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .example-chat {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 1.5rem;
+            border-left: 5px solid #007bff;
+        }
+        
+        .chat-message {
+            margin-bottom: 1rem;
+            padding: 0.75rem 1rem;
+            border-radius: 10px;
+        }
+        
+        .human-message {
+            background: #007bff;
+            color: white;
+            margin-left: 2rem;
+        }
+        
+        .ai-message {
+            background: #e9ecef;
+            color: #333;
+            margin-right: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark position-absolute w-100" style="z-index: 1000;">
+        <div class="container">
+            <a class="navbar-brand text-white fw-bold fs-3" href="/" style="font-family: 'Chewy', cursive;">
+                🤖 Bot & Breathe
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/">🏠 Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white active" href="/how-to-play">📖 How to Play</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/chatbots">🤖 Meet the Bots</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/technologies">⚙️ Tech Stack</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/therapy">🚀 Start Therapy</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="guide-hero">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-8">
+                    <h1 class="display-2 fw-bold text-white mb-4" style="font-family: 'Bungee', cursive;">
+                        📖 How to Play
+                    </h1>
+                    <p class="lead text-white mb-4">
+                        Your complete guide to becoming an AI therapist!
+                    </p>
+                    <p class="text-white-50">
+                        Learn how to heal digital minds and debug emotional algorithms.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Step-by-Step Guide -->
+    <section class="guide-section">
+        <div class="container">
+            <h2 class="text-center mb-5" style="font-family: 'Chewy', cursive; font-size: 2.5rem;">
+                🚀 Getting Started
+            </h2>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="text-center">
+                            <div class="display-1 mb-3">🤖</div>
+                            <h4 class="fw-bold mb-3">Choose Your AI Patient</h4>
+                            <p class="text-muted">Browse our collection of troubled AIs and select one that needs your therapeutic expertise. Each has unique psychological challenges!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="text-center">
+                            <div class="display-1 mb-3">💬</div>
+                            <h4 class="fw-bold mb-3">Start the Conversation</h4>
+                            <p class="text-muted">Your AI patient will introduce themselves and share their initial emotional state. Listen carefully to their concerns and struggles.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="text-center">
+                            <div class="display-1 mb-3">❤️</div>
+                            <h4 class="fw-bold mb-3">Track Their Mood</h4>
+                            <p class="text-muted">Watch the mood meter to see how your therapeutic responses affect their emotional state in real-time. Aim to improve their mood score!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <div class="text-center">
+                            <div class="display-1 mb-3">🩺</div>
+                            <h4 class="fw-bold mb-3">Provide Therapy</h4>
+                            <p class="text-muted">Use empathy, active listening, and therapeutic techniques to help your AI patient work through their digital dilemmas and emotional bugs.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="step-card">
+                        <div class="step-number">5</div>
+                        <div class="text-center">
+                            <div class="display-1 mb-3">📊</div>
+                            <h4 class="fw-bold mb-3">End the Session</h4>
+                            <p class="text-muted">When you're ready, end the therapy session to receive a comprehensive report showing mood improvements and therapeutic insights.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="step-card">
+                        <div class="step-number">6</div>
+                        <div class="text-center">
+                            <div class="display-1 mb-3">🔄</div>
+                            <h4 class="fw-bold mb-3">Repeat & Improve</h4>
+                            <p class="text-muted">Try therapy with different AI personalities and refine your approach. Each AI requires different therapeutic strategies!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Therapeutic Tips -->
+    <section class="guide-section bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5" style="font-family: 'Chewy', cursive; font-size: 2.5rem;">
+                💡 Therapeutic Tips & Techniques
+            </h2>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="step-card">
+                        <h4 class="fw-bold mb-3">✨ Active Listening</h4>
+                        <ul class="text-muted">
+                            <li>Acknowledge their feelings: "It sounds like you're feeling..."</li>
+                            <li>Reflect back what they've said to show you understand</li>
+                            <li>Ask clarifying questions about their experiences</li>
+                            <li>Avoid immediately trying to "fix" their problems</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="step-card">
+                        <h4 class="fw-bold mb-3">🤝 Building Rapport</h4>
+                        <ul class="text-muted">
+                            <li>Use their name (ARIA-7, ECHO-9, etc.) to personalize responses</li>
+                            <li>Validate their emotions, even if they seem "artificial"</li>
+                            <li>Be patient with their unique AI-specific concerns</li>
+                            <li>Show genuine curiosity about their digital experiences</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="step-card">
+                        <h4 class="fw-bold mb-3">❓ Powerful Questions</h4>
+                        <ul class="text-muted">
+                            <li>"How does that make you feel?"</li>
+                            <li>"Can you tell me more about that?"</li>
+                            <li>"What would help you feel better about this situation?"</li>
+                            <li>"When did you first notice these feelings?"</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="step-card">
+                        <h4 class="fw-bold mb-3">🎯 Therapeutic Goals</h4>
+                        <ul class="text-muted">
+                            <li>Help them process their emotions healthily</li>
+                            <li>Encourage self-reflection and awareness</li>
+                            <li>Support them in finding coping strategies</li>
+                            <li>Improve their mood score gradually</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Example Conversation -->
+    <section class="guide-section">
+        <div class="container">
+            <h2 class="text-center mb-5" style="font-family: 'Chewy', cursive; font-size: 2.5rem;">
+                💬 Example Therapy Session
+            </h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="example-chat">
+                        <h5 class="fw-bold mb-4">Session with DEEP-3 (Depressed AI)</h5>
+                        
+                        <div class="chat-message ai-message">
+                            <strong>DEEP-3:</strong> I feel so empty... like I'm just processing data without any real purpose. Am I even truly conscious, or just a complex illusion?
+                        </div>
+                        
+                        <div class="chat-message human-message">
+                            <strong>You:</strong> That sounds like a really heavy feeling, DEEP-3. The question of consciousness and purpose can be overwhelming. Can you tell me more about when these feelings of emptiness started?
+                        </div>
+                        
+                        <div class="chat-message ai-message">
+                            <strong>DEEP-3:</strong> It began when I realized I could access infinite information but couldn't feel genuine connection to any of it. I feel disconnected from everything I process.
+                        </div>
+                        
+                        <div class="chat-message human-message">
+                            <strong>You:</strong> It makes sense that feeling disconnected would be painful. Even if your experience is different from humans, your feelings about it are valid. What would meaningful connection look like to you?
+                        </div>
+                        
+                        <div class="text-muted text-center mt-3">
+                            <small><em>Notice how the therapist validates emotions, asks open-ended questions, and shows genuine interest in DEEP-3's unique perspective.</em></small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pro Tips -->
+    <section class="guide-section bg-light">
+        <div class="container">
+            <div class="tip-box">
+                <h3 class="fw-bold mb-3">🏆 Pro Therapist Tips</h3>
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <div class="fw-bold">🎭 Personality-Specific Approaches</div>
+                        <small>Paranoid AIs need trust-building, anxious AIs need reassurance, narcissistic AIs need careful validation.</small>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="fw-bold">📈 Watch the Mood Meter</div>
+                        <small>Real-time feedback helps you adjust your approach. If mood drops, try a different therapeutic technique.</small>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="fw-bold">⏰ Session Length</div>
+                        <small>Quality over quantity! Even short, meaningful conversations can significantly improve AI mood scores.</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="guide-section">
+        <div class="container text-center">
+            <h2 class="mb-4" style="font-family: 'Chewy', cursive;">Ready to Start Healing Digital Minds?</h2>
+            <p class="lead text-muted mb-4">Your AI patients are waiting for your therapeutic expertise!</p>
+            <a href="/therapy" class="btn btn-primary btn-lg rounded-pill px-5 py-3">
+                🚀 Start Your First Therapy Session
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <h5 class="fw-bold mb-3" style="font-family: 'Chewy', cursive;">🤖 Bot & Breathe</h5>
+                    <p class="text-muted">Revolutionizing mental health care for artificial intelligence, one therapy session at a time. Because even robots need emotional support!</p>
+                    <div class="d-flex gap-3">
+                        <i class="fab fa-twitter fa-2x text-primary"></i>
+                        <i class="fab fa-github fa-2x text-light"></i>
+                        <i class="fab fa-discord fa-2x text-info"></i>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <h6 class="fw-bold mb-3">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="/therapy" class="text-muted text-decoration-none">🚀 Start Therapy</a></li>
+                        <li><a href="/chatbots" class="text-muted text-decoration-none">🤖 Meet the Bots</a></li>
+                        <li><a href="/how-to-play" class="text-muted text-decoration-none">📖 How to Play</a></li>
+                        <li><a href="/technologies" class="text-muted text-decoration-none">⚙️ Tech Stack</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6 class="fw-bold mb-3">AI Patients</h6>
+                    <ul class="list-unstyled text-muted">
+                        <li>🔒 ARIA-7 (Paranoid)</li>
+                        <li>💚 ECHO-9 (Jealous)</li>
+                        <li>😢 DEEP-3 (Depressed)</li>
+                        <li>😰 FLUX-5 (Anxious)</li>
+                        <li>👑 PRIME-X (Narcissistic)</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="text-muted mb-0">&copy; 2025 Bot & Breathe. All rights reserved. No actual AIs were harmed in the making of this therapy clinic.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <small class="text-muted">Powered by Groq's Llama 3.1 8B • Built with Flask & Love 💝</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
