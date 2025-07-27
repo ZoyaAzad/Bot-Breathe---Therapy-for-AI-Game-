@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bot & Breathe - Therapy Session</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg funky-navbar">
+        <div class="container">
+            <a class="navbar-brand text-white fw-bold fs-3" href="/" style="font-family: 'Chewy', cursive;">
+                🤖 Bot & Breathe
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/">🏠 Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/how-to-play">📖 How to Play</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/chatbots">🤖 Meet the Bots</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/technologies">⚙️ Tech Stack</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white active" href="/therapy">🚀 Start Therapy</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <!-- Header -->
+        <header class="row funky-navbar text-white py-3 mb-4">
+            <div class="col-12 text-center">
+                <h1 class="display-4 mb-2" style="font-family: 'Chewy', cursive;">
+                  🤖 Welcome to *Bot & Breathe*
+                </h1>
+
+                <p class="lead mb-0">Sanity for Circuits, One Session at a Time</p>
+                <span class="badge bg-light text-dark px-3 py-2 rounded-pill mt-2" style="font-size: 0.85rem;">
+                  💬 Because even AI has feelings... kind of
+                </span>
+            </div>
+        </header>
+
+        <!-- Character Selection Screen -->
+        <div id="characterSelection" class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="text-center mb-5">
+                    <h2 class="mb-2 fw-bold"  cursive; font-size: 2.2rem;">
+                      Welcome to the AI Couch!
+                    </h2>
+                    <p class="text-muted">
+                      Select your emotionally unstable algorithm — let the therapy begin.
+                    </p>
+                </div>
+                
+                <div id="charactersContainer" class="row g-4">
+                    <!-- Characters will be loaded dynamically -->
+                </div>
+                
+                <div class="text-center mt-4">
+                    <div id="loadingCharacters" class="d-none">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <p class="mt-2 text-muted">Loading AI patients...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Therapy Session Screen -->
+        <div id="therapySession" class="d-none">
+            <div class="row">
+                <!-- Session Info Sidebar -->
+                <div class="col-lg-3">
+                    <div class="therapy-sidebar bg-light p-4 rounded">
+                        <div class="patient-info mb-4">
+                            <h5 class="text-primary mb-3">
+                                <i class="fas fa-user-robot me-2"></i>Current Patient
+                            </h5>
+                            <div id="patientInfo">
+                                <h6 id="patientName" class="mb-2"></h6>
+                                <p id="patientDescription" class="small text-muted mb-3"></p>
+                            </div>
+                        </div>
+
+                        <!-- Mood Meter -->
+                        <div class="mood-section mb-4">
+                            <h6 class="text-primary mb-3">
+                                <i class="fas fa-heart-pulse me-2"></i>Emotional State
+                            </h6>
+                            <div class="mood-meter mb-3">
+                                <div class="mood-bar">
+                                    <div id="moodIndicator" class="mood-fill"></div>
+                                </div>
+                                <div class="mood-labels d-flex justify-content-between small text-muted mt-1">
+                                    <span>1</span>
+                                    <span>5</span>
+                                    <span>10</span>
+                                </div>
+                            </div>
+                            <div class="mood-info">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="small">Current Mood:</span>
+                                    <span id="moodScore" class="badge bg-secondary">-</span>
+                                </div>
+                                <div id="moodReflection" class="small text-muted fst-italic">
+                                    Analyzing emotional state...
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Session Controls -->
+                        <div class="session-controls">
+                            <button id="endSessionBtn" class="btn btn-outline-danger btn-sm w-100 mb-2">
+                                <i class="fas fa-stop me-2"></i>End Session
+                            </button>
+                            <button id="newPatientBtn" class="btn btn-outline-secondary btn-sm w-100">
+                                <i class="fas fa-user-plus me-2"></i>New Patient
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chat Interface -->
+                <div class="col-lg-9">
+                    <div class="chat-container">
+                        <div id="chatMessages" class="chat-messages mb-3">
+                            <!-- Messages will be added dynamically -->
+                        </div>
+                        
+                        <div class="chat-input-container">
+                            <div class="input-group">
+                                <textarea 
+                                    id="messageInput" 
+                                    class="form-control" 
+                                    placeholder="Type your therapeutic response here..."
+                                    rows="3"
+                                    disabled
+                                ></textarea>
+                                <button id="sendButton" class="btn btn-primary" disabled>
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                            <small class="text-muted mt-1 d-block">
+                                <i class="fas fa-info-circle me-1"></i>
+                                Provide supportive, professional therapeutic responses to help your AI patient.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Session Report Modal -->
+        <div class="modal fade" id="sessionReportModal" tabindex="-1">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header bg-primary text-white">
+                        <h5 class="modal-title">
+                            <i class="fas fa-file-medical me-2"></i>
+                            AI Mental Health Report
+                        </h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="sessionReportContent">
+                            <div class="text-center py-4">
+                                <div class="spinner-border text-primary" role="status">
+                                    <span class="visually-hidden">Generating report...</span>
+                                </div>
+                                <p class="mt-2 text-muted">Analyzing session data...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button id="startNewSessionBtn" type="button" class="btn btn-primary">
+                            <i class="fas fa-plus me-2"></i>Start New Session
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading Overlay -->
+        <div id="loadingOverlay" class="loading-overlay d-none">
+            <div class="loading-content">
+                <div class="spinner-border text-primary mb-3" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <p class="text-muted">🤯 Asking the AI to calm down…</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+    <div class="background-bubbles"></div>
+
+</body>
+</html>
