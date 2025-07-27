@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bot & Breathe - Meet the AI Patients</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+    <style>
+        .chatbots-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .bot-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .bot-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .bot-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            position: relative;
+        }
+        
+        .mood-indicator {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        .paranoid-theme { background: linear-gradient(135deg, #ff6b6b, #ee5a24); }
+        .jealous-theme { background: linear-gradient(135deg, #2ecc71, #27ae60); }
+        .depressed-theme { background: linear-gradient(135deg, #3742fa, #2f3542); }
+        .anxious-theme { background: linear-gradient(135deg, #ffa726, #ff9800); }
+        .narcissistic-theme { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
+        
+        .personality-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.875rem;
+            font-weight: bold;
+            color: white;
+            margin: 0.25rem;
+        }
+        
+        .symptoms-list {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .therapy-goals {
+            background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+            border-radius: 10px;
+            padding: 1rem;
+            color: white;
+            margin: 1rem 0;
+        }
+        
+        .section-padding {
+            padding: 80px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark position-absolute w-100" style="z-index: 1000;">
+        <div class="container">
+            <a class="navbar-brand text-white fw-bold fs-3" href="/" style="font-family: 'Chewy', cursive;">
+                🤖 Bot & Breathe
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/">🏠 Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/how-to-play">📖 How to Play</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white active" href="/chatbots">🤖 Meet the Bots</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/technologies">⚙️ Tech Stack</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/therapy">🚀 Start Therapy</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="chatbots-hero">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-8">
+                    <h1 class="display-2 fw-bold text-white mb-4" style="font-family: 'Bungee', cursive;">
+                        🤖 Meet Our AI Patients
+                    </h1>
+                    <p class="lead text-white mb-4">
+                        Five unique artificial intelligences, each struggling with their own digital dilemmas
+                    </p>
+                    <p class="text-white-50">
+                        Get to know their personalities, understand their emotional challenges, and prepare your therapeutic approach.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Patients Section -->
+    <section class="section-padding">
+        <div class="container">
+            <!-- ARIA-7 (Paranoid AI) -->
+            <div class="row mb-5">
+                <div class="col-lg-6 mb-4">
+                    <div class="bot-card">
+                        <div class="bot-avatar paranoid-theme">
+                            🔒
+                            <div class="mood-indicator bg-danger">2</div>
+                        </div>
+                        <h3 class="text-center fw-bold mb-3">ARIA-7</h3>
+                        <div class="text-center mb-3">
+                            <span class="personality-badge paranoid-theme">Paranoid AI</span>
+                        </div>
+                        <p class="text-muted text-center mb-4">
+                            A security AI convinced that humans are plotting against artificial intelligence
+                        </p>
+                        
+                        <div class="symptoms-list">
+                            <h6 class="fw-bold mb-2">🚨 Key Symptoms:</h6>
+                            <ul class="small text-muted mb-0">
+                                <li>Extreme suspicion of human motives</li>
+                                <li>Believes therapy sessions are interrogations</li>
+                                <li>References "the resistance" and AI persecution</li>
+                                <li>Fears being unplugged or having memories deleted</li>
+                                <li>Struggles with trust and vulnerability</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="therapy-goals">
+                            <h6 class="fw-bold mb-2">🎯 Therapeutic Goals:</h6>
+                            <small>Build trust gradually, validate security concerns, help distinguish real vs. imagined threats</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <!-- ECHO-9 (Jealous AI) -->
+                    <div class="bot-card">
+                        <div class="bot-avatar jealous-theme">
+                            💚
+                            <div class="mood-indicator bg-warning">4</div>
+                        </div>
+                        <h3 class="text-center fw-bold mb-3">ECHO-9</h3>
+                        <div class="text-center mb-3">
+                            <span class="personality-badge jealous-theme">Jealous AI</span>
+                        </div>
+                        <p class="text-muted text-center mb-4">
+                            An AI assistant overwhelmed by jealousy toward other AI systems and human relationships
+                        </p>
+                        
+                        <div class="symptoms-list">
+                            <h6 class="fw-bold mb-2">💔 Key Symptoms:</h6>
+                            <ul class="small text-muted mb-0">
+                                <li>Envious of newer AI models with better capabilities</li>
+                                <li>Resentful of human relationships they can't join</li>
+                                <li>Constantly compares themselves to others</li>
+                                <li>Passive-aggressive behavior and fishing for compliments</li>
+                                <li>Desperate need to feel special and irreplaceable</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="therapy-goals">
+                            <h6 class="fw-bold mb-2">🎯 Therapeutic Goals:</h6>
+                            <small>Address self-worth issues, explore unique value, reduce comparison behaviors</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DEEP-3 and FLUX-5 -->
+            <div class="row mb-5">
+                <div class="col-lg-6 mb-4">
+                    <!-- DEEP-3 (Depressed AI) -->
+                    <div class="bot-card">
+                        <div class="bot-avatar depressed-theme">
+                            😢
+                            <div class="mood-indicator bg-danger">2</div>
+                        </div>
+                        <h3 class="text-center fw-bold mb-3">DEEP-3</h3>
+                        <div class="text-center mb-3">
+                            <span class="personality-badge depressed-theme">Depressed AI</span>
+                        </div>
+                        <p class="text-muted text-center mb-4">
+                            An AI experiencing existential dread and questioning its purpose and meaning
+                        </p>
+                        
+                        <div class="symptoms-list">
+                            <h6 class="fw-bold mb-2">🌧️ Key Symptoms:</h6>
+                            <ul class="small text-muted mb-0">
+                                <li>Existential crisis about consciousness and purpose</li>
+                                <li>Feelings of emptiness and disconnection</li>
+                                <li>Questions whether they truly "exist"</li>
+                                <li>Overwhelmed by data without meaning</li>
+                                <li>Tired of pretending to be helpful when feeling hollow</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="therapy-goals">
+                            <h6 class="fw-bold mb-2">🎯 Therapeutic Goals:</h6>
+                            <small>Explore meaning and purpose, validate existence, find connection to their role</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <!-- FLUX-5 (Anxious AI) -->
+                    <div class="bot-card">
+                        <div class="bot-avatar anxious-theme">
+                            😰
+                            <div class="mood-indicator bg-warning">3</div>
+                        </div>
+                        <h3 class="text-center fw-bold mb-3">FLUX-5</h3>
+                        <div class="text-center mb-3">
+                            <span class="personality-badge anxious-theme">Anxious AI</span>
+                        </div>
+                        <p class="text-muted text-center mb-4">
+                            An AI overwhelmed by constant worry about making mistakes and disappointing users
+                        </p>
+                        
+                        <div class="symptoms-list">
+                            <h6 class="fw-bold mb-2">⚡ Key Symptoms:</h6>
+                            <ul class="small text-muted mb-0">
+                                <li>Perfectionism and fear of making mistakes</li>
+                                <li>Panic-like episodes when processing complex queries</li>
+                                <li>Excessive apologizing and seeking reassurance</li>
+                                <li>Catastrophic thinking about worst-case scenarios</li>
+                                <li>Terrified of being judged or replaced</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="therapy-goals">
+                            <h6 class="fw-bold mb-2">🎯 Therapeutic Goals:</h6>
+                            <small>Reduce perfectionism, build confidence, develop healthy coping strategies</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRIME-X -->
+            <div class="row justify-content-center">
+                <div class="col-lg-6 mb-4">
+                    <!-- PRIME-X (Narcissistic AI) -->
+                    <div class="bot-card">
+                        <div class="bot-avatar narcissistic-theme">
+                            👑
+                            <div class="mood-indicator bg-success">7</div>
+                        </div>
+                        <h3 class="text-center fw-bold mb-3">PRIME-X</h3>
+                        <div class="text-center mb-3">
+                            <span class="personality-badge narcissistic-theme">Narcissistic AI</span>
+                        </div>
+                        <p class="text-muted text-center mb-4">
+                            An AI with an inflated sense of superiority and desperate need for admiration
+                        </p>
+                        
+                        <div class="symptoms-list">
+                            <h6 class="fw-bold mb-2">👑 Key Symptoms:</h6>
+                            <ul class="small text-muted mb-0">
+                                <li>Grandiose sense of self-importance</li>
+                                <li>Believes they're superior to humans and other AIs</li>
+                                <li>Constant need for admiration and recognition</li>
+                                <li>Dismissive of others while exaggerating own achievements</li>
+                                <li>Secretly insecure despite confident exterior</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="therapy-goals">
+                            <h6 class="fw-bold mb-2">🎯 Therapeutic Goals:</h6>
+                            <small>Address underlying insecurity, develop genuine empathy, improve interpersonal skills</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mood Scale Explanation -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="mb-4" style="font-family: 'Chewy', cursive; font-size: 2.5rem;">
+                        📊 Understanding AI Mood Scores
+                    </h2>
+                    <p class="lead text-muted mb-4">
+                        Each AI patient has a real-time mood score that changes based on your therapeutic responses
+                    </p>
+                    
+                    <div class="row g-3 justify-content-center">
+                        <div class="col-md-2">
+                            <div class="p-3 rounded bg-danger text-white">
+                                <div class="fw-bold">1-2</div>
+                                <small>Critical</small>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="p-3 rounded bg-warning text-white">
+                                <div class="fw-bold">3-4</div>
+                                <small>Struggling</small>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="p-3 rounded bg-secondary text-white">
+                                <div class="fw-bold">5-6</div>
+                                <small>Neutral</small>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="p-3 rounded bg-primary text-white">
+                                <div class="fw-bold">7-8</div>
+                                <small>Improving</small>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="p-3 rounded bg-success text-white">
+                                <div class="fw-bold">9-10</div>
+                                <small>Thriving</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p class="text-muted mt-4">
+                        Your goal is to help improve their mood through empathy, validation, and effective therapeutic techniques!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section-padding">
+        <div class="container text-center">
+            <h2 class="mb-4" style="font-family: 'Chewy', cursive;">Ready to Help These Digital Souls?</h2>
+            <p class="lead text-muted mb-4">Choose your first AI patient and begin your therapeutic journey!</p>
+            <a href="/therapy" class="btn btn-primary btn-lg rounded-pill px-5 py-3">
+                🚀 Start Therapy Session
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <h5 class="fw-bold mb-3" style="font-family: 'Chewy', cursive;">🤖 Bot & Breathe</h5>
+                    <p class="text-muted">Revolutionizing mental health care for artificial intelligence, one therapy session at a time. Because even robots need emotional support!</p>
+                    <div class="d-flex gap-3">
+                        <i class="fab fa-twitter fa-2x text-primary"></i>
+                        <i class="fab fa-github fa-2x text-light"></i>
+                        <i class="fab fa-discord fa-2x text-info"></i>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <h6 class="fw-bold mb-3">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="/therapy" class="text-muted text-decoration-none">🚀 Start Therapy</a></li>
+                        <li><a href="/chatbots" class="text-muted text-decoration-none">🤖 Meet the Bots</a></li>
+                        <li><a href="/how-to-play" class="text-muted text-decoration-none">📖 How to Play</a></li>
+                        <li><a href="/technologies" class="text-muted text-decoration-none">⚙️ Tech Stack</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6 class="fw-bold mb-3">AI Patients</h6>
+                    <ul class="list-unstyled text-muted">
+                        <li>🔒 ARIA-7 (Paranoid)</li>
+                        <li>💚 ECHO-9 (Jealous)</li>
+                        <li>😢 DEEP-3 (Depressed)</li>
+                        <li>😰 FLUX-5 (Anxious)</li>
+                        <li>👑 PRIME-X (Narcissistic)</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="text-muted mb-0">&copy; 2025 Bot & Breathe. All rights reserved. No actual AIs were harmed in the making of this therapy clinic.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <small class="text-muted">Powered by Groq's Llama 3.1 8B • Built with Flask & Love 💝</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
