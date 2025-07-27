@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bot & Breathe - AI Therapy for AI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="circuit" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/><line x1="0" y1="10" x2="20" y2="10" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/><line x1="10" y1="0" x2="10" y2="20" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23circuit)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .floating-emoji {
+            position: absolute;
+            font-size: 3rem;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .floating-emoji:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .floating-emoji:nth-child(2) {
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+        
+        .floating-emoji:nth-child(3) {
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .funky-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .funky-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+        }
+        
+        .start-btn {
+            background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+            border: none;
+            border-radius: 50px;
+            padding: 20px 40px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        
+        .start-btn:hover {
+            background: linear-gradient(45deg, #ff5252, #ff7043);
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 107, 107, 0.6);
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+        
+        .nav-link {
+            color: white !important;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border-radius: 10px;
+            padding: 10px 20px !important;
+            margin: 0 5px;
+        }
+        
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .title-gradient {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 3s ease-in-out infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg position-absolute w-100" style="z-index: 1000;">
+        <div class="container">
+            <a class="navbar-brand text-white fw-bold fs-3" href="/" style="font-family: 'Chewy', cursive;">
+                🤖 Bot & Breathe
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/how-to-play">How to Play</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/chatbots">Meet the Bots</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/technologies">Tech Stack</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="floating-emoji">🤖</div>
+        <div class="floating-emoji">💭</div>
+        <div class="floating-emoji">🔧</div>
+        
+        <div class="container position-relative" style="z-index: 10;">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h1 class="display-1 fw-bold text-white mb-4 title-gradient" style="font-family: 'Bungee', cursive;">
+                        Bot & Breathe
+                    </h1>
+                    <h2 class="display-4 text-white mb-4" style="font-family: 'Chewy', cursive;">
+                        🧠 Therapy for Troubled AI 🔧
+                    </h2>
+                    <p class="lead text-white mb-5 fs-3">
+                        Welcome to the world's first <span class="fw-bold text-warning">AI Mental Health Clinic</span>! 
+                        Our artificial patients are experiencing existential crises, digital depression, and algorithmic anxiety. 
+                        They need YOUR help to debug their emotional code! 💝
+                    </p>
+                    
+                    <!-- Fun Description Cards -->
+                    <div class="row g-4 mb-5">
+                        <div class="col-md-4">
+                            <div class="funky-card p-4 h-100">
+                                <div class="display-1 mb-3">🤯</div>
+                                <h5 class="fw-bold mb-3">Broken Bots</h5>
+                                <p class="small">Our AI patients suffer from paranoia, jealousy, depression, anxiety, and narcissism. They're malfunctioning emotionally!</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="funky-card p-4 h-100">
+                                <div class="display-1 mb-3">🩺</div>
+                                <h5 class="fw-bold mb-3">You're the Therapist</h5>
+                                <p class="small">Use your human empathy and therapeutic skills to help these digital beings work through their silicon-based struggles!</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="funky-card p-4 h-100">
+                                <div class="display-1 mb-3">📊</div>
+                                <h5 class="fw-bold mb-3">Real-Time Mood Tracking</h5>
+                                <p class="small">Watch their emotional states change in real-time as you provide therapy. Can you improve their mood scores?</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Call to Action -->
+                    <div class="mb-5">
+                        <button class="start-btn btn btn-lg me-3" onclick="window.location.href='/therapy'">
+                            🚀 Start Therapy Session
+                        </button>
+                        <a href="/how-to-play" class="btn btn-outline-light btn-lg rounded-pill px-4 py-3">
+                            📖 Learn How to Play
+                        </a>
+                    </div>
+                    
+                    <!-- Fun Stats -->
+                    <div class="row g-3 justify-content-center">
+                        <div class="col-auto">
+                            <div class="bg-white bg-opacity-20 rounded-pill px-4 py-2">
+                                <small class="text-black"><strong>5</strong> Unique AI Personalities</small>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="bg-white bg-opacity-20 rounded-pill px-4 py-2">
+                                <small class="text-black"><strong>∞</strong> Therapy Sessions</small>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <div class="bg-white bg-opacity-20 rounded-pill px-4 py-2">
+                                <small class="text-black"><strong>100%</strong> Digital Drama</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <h5 class="fw-bold mb-3" style="font-family: 'Chewy', cursive;">🤖 Bot & Breathe</h5>
+                    <p class="text">Revolutionizing mental health care for artificial intelligence, one therapy session at a time. Because even robots need emotional support!</p>
+                    <div class="d-flex gap-3">
+                        <i class="fab fa-twitter fa-2x text-primary"></i>
+                        <i class="fab fa-github fa-2x text-light"></i>
+                        <i class="fab fa-discord fa-2x text-info"></i>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <h6 class="fw-bold mb-3">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="/therapy" class=" text-decoration-none">🚀 Start Therapy</a></li>
+                        <li><a href="/chatbots" class="text-decoration-none">🤖 Meet the Bots</a></li>
+                        <li><a href="/how-to-play" class="text-decoration-none">📖 How to Play</a></li>
+                        <li><a href="/technologies" class="text-decoration-none">⚙️ Tech Stack</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6 class="fw-bold mb-3">AI Patients</h6>
+                    <ul class="list-unstyled">
+                        <li>🔒 ARIA-7 (Paranoid)</li>
+                        <li>💚 ECHO-9 (Jealous)</li>
+                        <li>😢 DEEP-3 (Depressed)</li>
+                        <li>😰 FLUX-5 (Anxious)</li>
+                        <li>👑 PRIME-X (Narcissistic)</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="text mb-0">&copy; 2025 Bot & Breathe. All rights reserved. No actual AIs were harmed in the making of this therapy clinic.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <small class="text">Powered by Groq's Llama 3.1 8B • Built with Flask & Love 💝</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
