@@ -7,4 +7,4 @@ I’m proud to have been a part of this team effort — we tackled UI/UX, backen
 
 ✨ This fork exists for portfolio and reference purposes. All credits to the original team effort!
 
-Original repo: []
+Original repo: [https://github.com/EmanKhaliq49/Bot-Breathe---Therapy-for-AI]
